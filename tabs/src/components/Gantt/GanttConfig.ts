@@ -11,10 +11,16 @@ const project = new ProjectModel({
   // specify data source
   transport: {
     load: {
-      url: 'http://localhost:8010/api/user/data',
-    },
-    sync: {
-      url: 'http://localhost:53000/user/api',
+      requestConfig: {
+        url: 'http://localhost:8010/api/user/data',
+        // headers to fix cors issue, no wildcard '*' allowed
+        headers: {
+          'Access-Control-Allow-Origin': 'http://localhost:8010',
+        },
+      },
+      sync: {
+        url: 'http://localhost:53000/user/api',
+      },
     },
   },
   autoLoad: true,
@@ -41,7 +47,7 @@ const ganttConfig: Partial<GanttConfig> = {
         url: 'http://localhost:8010/api/user/data',
       },
       sync: {
-        url: 'http://localhost:8010/api',
+        url: 'http://localhost:8010/api/user/api',
       },
     },
     autoLoad: true,
