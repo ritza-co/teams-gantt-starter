@@ -3,6 +3,7 @@
  */
 import { GanttConfig, ProjectModel } from '@bryntum/gantt';
 
+// create project which loads data from a URL
 const project = new ProjectModel({
   taskStore: {
     autoTree: true,
@@ -11,16 +12,10 @@ const project = new ProjectModel({
   // specify data source
   transport: {
     load: {
-      requestConfig: {
-        url: 'http://localhost:8010/api/user/data',
-        // headers to fix cors issue, no wildcard '*' allowed
-        headers: {
-          'Access-Control-Allow-Origin': 'http://localhost:8010',
-        },
-      },
-      sync: {
-        url: 'http://localhost:53000/user/api',
-      },
+      url: 'http://localhost:8010/data',
+    },
+    sync: {
+      url: 'http://localhost:8010/api',
     },
   },
   autoLoad: true,
@@ -29,31 +24,17 @@ const project = new ProjectModel({
 });
 
 const ganttConfig: Partial<GanttConfig> = {
-  width: '100vw', // = 800px
+  width: '100vw',
   height: '100vh',
-  listeners: {},
-  columns: [{ type: 'name', field: 'name', width: 250 }],
+  dependencyIdField: 'sequenceNumber',
+  columns: [{ type: 'name', width: 250, text: 'Tasks' }],
   viewPreset: 'weekAndDayLetter',
   barMargin: 10,
-
-  project: {
-    taskStore: {
-      autoTree: true,
-      transformFlatData: true,
-    },
-    // specify data source
-    transport: {
-      load: {
-        url: 'http://localhost:8010/api/user/data',
-      },
-      sync: {
-        url: 'http://localhost:8010/api/user/api',
-      },
-    },
-    autoLoad: true,
-    autoSync: true,
-    validateResponse: true,
-  },
+  project,
 };
+
+// ganttConfig.readOnly = true;
+
+project.load();
 
 export { ganttConfig };

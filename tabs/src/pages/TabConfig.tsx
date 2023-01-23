@@ -1,6 +1,5 @@
-import React from "react";
-import "../styles/App.css";
-import { app, pages } from "@microsoft/teams-js";
+import React from 'react';
+import { app, pages } from '@microsoft/teams-js';
 
 /**
  * The 'Config' component is used to display your group tabs
@@ -21,10 +20,10 @@ class TabConfig extends React.Component {
         const baseUrl = `https://${window.location.hostname}:${window.location.port}`;
         pages.config
           .setConfig({
-            suggestedDisplayName: "My Tab",
-            entityId: "Test",
-            contentUrl: baseUrl + "/index.html#/tab",
-            websiteUrl: baseUrl + "/index.html#/tab",
+            suggestedDisplayName: 'My Tab',
+            entityId: 'Test',
+            contentUrl: baseUrl + '/index.html#/tab',
+            websiteUrl: baseUrl + '/index.html#/tab',
           })
           .then(() => {
             saveEvent.notifySuccess();

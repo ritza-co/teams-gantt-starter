@@ -5,7 +5,6 @@ import { useTeamsFx } from '@microsoft/teamsfx-react';
 import Privacy from './Privacy';
 import TermsOfUse from './TermsOfUse';
 import Tab from './Tab';
-import '../styles/App.css';
 import TabConfig from './TabConfig';
 import { TeamsFxContext } from '../components/Context';
 import config from '../lib/config';
