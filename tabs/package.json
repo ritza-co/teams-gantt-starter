@@ -3,6 +3,8 @@
   "version": "0.1.0",
   "private": true,
   "dependencies": {
+    "@bryntum/gantt": "5.2.7",
+    "@bryntum/gantt-react": "5.2.7",
     "@fluentui/react-northstar": "^0.62.0",
     "@microsoft/mgt-element": "^2.6.2",
     "@microsoft/mgt-react": "^2.6.2",
@@ -26,6 +28,7 @@
     "cross-env": "^7.0.3",
     "env-cmd": "^10.1.0",
     "typescript": "^4.1.2",
+    "babel-preset-react-app": "npm:@bryntum/babel-preset-react-app@10.0.0",
     "sass": "~1.56.0"
   },
   "scripts": {
