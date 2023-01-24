@@ -1,1 +1,5 @@
 /.DS_Store
+.backup
+node_modules
+tabs/node_modules
+tabs/my-app
