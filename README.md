@@ -7,7 +7,7 @@
 
 
 <p align="center">
-  <i></i><br/> 
+  <i>World Class Web Components</i><br/> 
   <a href="https://bryntum.com">bryntum.com</a>
 </p>
 
