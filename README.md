@@ -1,7 +1,7 @@
 
 <p align="center">
   <a href="bryntum.com">
-    <img alt="Bryntum" title="Bryntum" src="bryntum.svg" width="400" style="color: black">
+    <img alt="Bryntum" title="Bryntum" src="logo.svg" width="400" style="color: black">
   </a>
 </p>
 
